@@ -19,6 +19,10 @@ app.get('/', (req,res) => {
     rollbar.info('html file served successfully')
 })
 
+let button1 = document.getElementById('btn1')
+
+button1.addEventListener('click', rollbar.error("Don't push this button!"))
+
 const port = process.env.PORT || 4545
 
 app.listen(port, () => console.log(`Take us to warp ${port}!`))
