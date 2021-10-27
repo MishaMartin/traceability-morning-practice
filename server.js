@@ -4,10 +4,12 @@ const path = require('path')
 const Rollbar = require('rollbar')
 
 let rollbar = new Rollbar({
-    accessToken: '',
+    accessToken: 'daaecba1f10b45d4860a56ac04be4f96',
     captureToken: true,
     captureUnhandledRejections: true
 })
+
+rollbar.log('Hello World!')
 
 const app = express()
 app.use(express.json())
