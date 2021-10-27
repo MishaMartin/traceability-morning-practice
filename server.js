@@ -23,6 +23,8 @@ let button1 = document.getElementById('btn1')
 
 button1.addEventListener('click', rollbar.error("Don't push this button!"))
 
+app.use(rollbar.errorHandler())
+
 const port = process.env.PORT || 4545
 
 app.listen(port, () => console.log(`Take us to warp ${port}!`))
