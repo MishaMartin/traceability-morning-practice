@@ -20,8 +20,11 @@ app.get('/', (req,res) => {
 })
 
 let button1 = document.getElementById('btn1')
+function errorStatus(){
+    rollbar.status(400).send("Don't push this button!")
+}
 
-button1.addEventListener('click', rollbar.error("Don't push this button!"))
+button1.addEventListener('click', errorStatus )
 
 app.use(rollbar.errorHandler())
 
